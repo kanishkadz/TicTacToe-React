@@ -23,6 +23,7 @@ function TicTacToe() {
             data[num] = "o";
             setCount(++count);
         }
+        checkWin();
 
     }
 
