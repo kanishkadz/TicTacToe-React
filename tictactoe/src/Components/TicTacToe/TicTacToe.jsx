@@ -26,6 +26,20 @@ function TicTacToe() {
 
     }
 
+    const checkWin = () => {
+        if(data[0] === data[1] && data[1] === data[2] && data[2]!=="") {
+            won(data);
+        } else if(data[3] === data[4] && data[4] === data[5] && data[5]!=="") {
+            won(data);
+        } else if(data[6] === data[7] && data[7] === data[8] && data[8]!=="") {
+            won(data);
+        }
+    }
+
+    const won = (winner) => {
+        setLock(true);
+    }
+
   return (
     <div className='container'>
         <h1 className="title">TicTacToe Game in <span>React</span></h1>
