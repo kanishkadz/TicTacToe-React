@@ -53,10 +53,16 @@ function TicTacToe() {
     const won = (winner) => {
         setLock(true);
         if(winner==="x") {
-            titleRef.current.innerHTML = `Congratulations! <img src = ${cross_icon}>`;
+            titleRef.current.innerHTML = `Congratulations! <img src = ${cross_icon}>, wins!!`;
         } else {
-            titleRef.current.innerHTML = `Congratulations! <img src = ${circle}>`;
+            titleRef.current.innerHTML = `Congratulations! <img src = ${circle}>, wins!!`;
         }
+    }
+
+    const reset = () => {
+        setLock(false);
+        data = ["","","","","","","","",""];
+        titleRef.current.innerHTML = 'TicTacToe in <span>React</span>'
     }
 
   return (
@@ -79,7 +85,7 @@ function TicTacToe() {
                 <div className="boxes" onClick={(e) => {toggle(e,8)}}></div>
             </div>
         </div>
-        <button className="reset">Reset</button>
+        <button className="reset" onClick={()=>{reset()}}>Reset</button>
     </div>
   )
 }
