@@ -9,6 +9,7 @@ function TicTacToe() {
 
     let [count, setCount] = useState(0);
     let [lock, setLock] = useState(false);
+    let titleRef = useRef(null);
 
     const toggle = (w, num) => {
         if (lock) {
@@ -55,7 +56,7 @@ function TicTacToe() {
 
   return (
     <div className='container'>
-        <h1 className="title">TicTacToe Game in <span>React</span></h1>
+        <h1 className="title" ref={titleRef}>TicTacToe Game in <span>React</span></h1>
         <div className="board">
             <div className="row1">
                 <div className="boxes" onClick={(e) => {toggle(e,0)}}></div>
